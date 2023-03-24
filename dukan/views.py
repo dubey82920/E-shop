@@ -99,6 +99,7 @@ def login_page(request):
       pwd=request.POST.get('password')
       user=authenticate(request,username=name,password=pwd)
       if user is not None:
+       
         login(request,user)
         messages.success(request,"Logged in Successfully")
         return redirect("/")
